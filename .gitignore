@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+debug.log
+
+# Config files with credentials
+config.yaml
+devices.yaml
+prefixes.yaml
+
+# Generated configs
+config-generator/generated/
+
+# OS
+.DS_Store
+Thumbs.db

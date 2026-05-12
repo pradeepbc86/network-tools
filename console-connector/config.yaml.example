@@ -1,0 +1,25 @@
+# NetBox Console Connector Configuration
+# Copy this file to config.yaml and customize
+
+netbox:
+  # NetBox API URL (without trailing slash)
+  url: "https://netbox.example.com/api"
+
+  # NetBox API token (or set NETBOX_TOKEN environment variable)
+  # Generate at: NetBox -> User -> API Tokens
+  api_token: "YOUR_NETBOX_API_TOKEN_HERE"
+
+ssh:
+  # Jump host to tunnel through
+  jump_host: "jumphost.example.com"
+
+  # SSH username (or set SSH_USERNAME environment variable)
+  # If not set, you'll be prompted when running the script
+  username: "your-username"
+
+logging:
+  # Log file location
+  log_file: "console-connector.log"
+
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"

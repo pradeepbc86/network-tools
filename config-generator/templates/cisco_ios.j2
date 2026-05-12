@@ -1,0 +1,39 @@
+hostname {{ device.name }}
+
+interface Loopback0
+ description Management Loopback
+ ip address {{ device.loopback_ip.split('/')[0] }} 255.255.255.255
+!
+
+{% if device.vlans %}
+{% for vlan in device.vlans %}
+vlan {{ vlan.vlan_id }}
+ name {{ vlan.name }}
+!
+
+interface Vlan{{ vlan.vlan_id }}
+ description {{ vlan.name }}
+ ip address {{ vlan.ip.split('/')[0] }} 255.255.255.0
+ no shutdown
+!
+
+{% endfor %}
+{% endif %}
+
+{% if device.interfaces is defined and device.interfaces %}
+{% for iface in device.interfaces %}
+interface {{ iface.name }}
+ description {{ iface.description }}
+ ip address {{ iface.ip.split('/')[0] }} 255.255.255.252
+ no shutdown
+!
+
+{% endfor %}
+{% endif %}
+
+line vty 0 4
+ transport input ssh
+ login local
+!
+
+end

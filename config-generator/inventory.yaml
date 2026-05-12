@@ -1,0 +1,64 @@
+devices:
+  # Juniper device example
+  - name: "edge-router-sea01"
+    vendor: "juniper"
+    model: "PTX10003"
+    mgmt_ip: "10.0.0.1"
+    loopback_ip: "192.0.2.1/32"
+    bgp_asn: 65000
+    bgp_router_id: "192.0.2.1"
+    interfaces:
+      - name: "ge-0/0/0"
+        description: "Peer to AS65001"
+        ip: "198.51.100.1/31"
+        bgp_peer_ip: "198.51.100.0"
+        bgp_peer_asn: 65001
+      - name: "ge-0/0/1"
+        description: "Peer to AS65002"
+        ip: "198.51.100.3/31"
+        bgp_peer_ip: "198.51.100.2"
+        bgp_peer_asn: 65002
+
+  # Cisco IOS-XR device example
+  - name: "core-router-lax01"
+    vendor: "cisco_iosxr"
+    model: "ASR9001"
+    mgmt_ip: "10.0.0.2"
+    loopback_ip: "192.0.2.2/32"
+    bgp_asn: 65000
+    bgp_router_id: "192.0.2.2"
+    interfaces:
+      - name: "GigabitEthernet0/0/0/0"
+        description: "Transit to Provider A"
+        ip: "203.0.113.1/31"
+        bgp_peer_ip: "203.0.113.0"
+        bgp_peer_asn: 65100
+
+  # Cisco IOS device example
+  - name: "access-switch-nyc01"
+    vendor: "cisco_ios"
+    model: "Catalyst3850"
+    mgmt_ip: "10.0.0.3"
+    loopback_ip: "192.0.2.3/32"
+    vlans:
+      - vlan_id: 10
+        name: "PRODUCTION"
+        ip: "10.10.10.1/24"
+      - vlan_id: 20
+        name: "MANAGEMENT"
+        ip: "10.10.20.1/24"
+
+  # Arista device example
+  - name: "spine-switch-dfw01"
+    vendor: "arista"
+    model: "7280R3"
+    mgmt_ip: "10.0.0.4"
+    loopback_ip: "192.0.2.4/32"
+    bgp_asn: 65000
+    bgp_router_id: "192.0.2.4"
+    interfaces:
+      - name: "Ethernet1"
+        description: "Leaf uplink"
+        ip: "10.255.0.0/31"
+        bgp_peer_ip: "10.255.0.1"
+        bgp_peer_asn: 65001
