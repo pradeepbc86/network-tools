@@ -1,3 +1,3 @@
-"""netcli — CLI toolkit for network reliability engineers."""
+"""netcli — network toolkit."""
 
 __version__ = "0.1.0"

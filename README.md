@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-CLI toolkit for network reliability engineers. Config generation, PeeringDB lookups, RPKI validation, device inventory, and console access — all under one command.
+network toolkit. Config generation, PeeringDB lookups, RPKI validation, device inventory, and console access — all under one command.
 
 ## Install
 

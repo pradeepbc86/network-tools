@@ -7,7 +7,7 @@ from netcli import __version__
 @click.group()
 @click.version_option(__version__, prog_name="netcli")
 def cli():
-    """netcli — CLI toolkit for network reliability engineers.
+    """netcli — network toolkit.
 
     \b
     Commands:
