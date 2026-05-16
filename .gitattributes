@@ -1,0 +1,2 @@
+# Suppress GitHub language detection for the pinned-repo card
+* linguist-detectable=false
